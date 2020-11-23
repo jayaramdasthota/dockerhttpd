@@ -9,7 +9,7 @@ pipeline {
 	  stage('GIT CheckOut') {
 	  	  steps {
             echo 'Checking out pipeline'
-			git 'https://github.com/sforcloud/dockerhttpd.git'
+			git 'https://github.com/jayaramdasthota/dockerhttpd.git'
        	   }
 		    }
 	 stage('BUILD'){
@@ -22,19 +22,19 @@ pipeline {
 	  stage('TAG') {
          steps {
             echo 'Hello World! this is a Job2'
-			sh label: '', script: 'sudo docker tag pipeline sforcloud/pipeline'
+			sh label: '', script: 'sudo docker tag pipeline jayaramdasthota/pipeline'
          }
       }
 	  stage('LOGIN') {
          steps {
             echo 'We are logging in to docker HUb'
-			sh label: '', script: 'sudo docker login -u sforcloud -p Asus!1234'
+			sh label: '', script: 'sudo docker login -u jayaramdasthota -p Bgt5%6yhn'
          }
    }
 	  stage('PUSH') {
          steps {
            echo 'Pushing the Image to the Docker Hub'
-		   sh label: '', script: 'sudo docker push sforcloud/pipeline'
+		   sh label: '', script: 'sudo docker push jayaramdasthota/pipeline'
 		   
          }
    }
